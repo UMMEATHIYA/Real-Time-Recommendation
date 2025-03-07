@@ -1,0 +1,13 @@
+service: recommendation-service
+
+provider:
+  name: aws
+  runtime: python3.8
+
+functions:
+  recommend:
+    handler: handler.recommend
+    events:
+      - http:
+          path: recommend
+          method: get
